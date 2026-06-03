@@ -1,8 +1,8 @@
-process.env.DOTENV_ENCRYPTION = 'false';
+
 const express = require('express');
 const sql = require('mssql');
 const cors = require('cors');
-require('@dotenvx/dotenvx').config({ encrypt: false });
+require('dotenv').config();
 
 const app = express();
 app.use(cors({ origin: '*', credentials: true }));
