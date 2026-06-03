@@ -1,10 +1,10 @@
-
 const express = require('express');
 const sql = require('mssql');
 const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 
