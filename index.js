@@ -5,7 +5,8 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors({ origin: '*', credentials: true }));
+// origin: true 설정으로 요청을 보낸 도메인을 허용 (credentials: true와 함께 사용 시 필수)
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 // Database configuration
