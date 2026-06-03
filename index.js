@@ -46,7 +46,8 @@ app.get('/api/corners', async (req, res) => {
     res.json(corners);
   } catch (err) {
     console.error('[API Error] /api/corners:', err.message);
-    res.status(500).send('데이터베이스 오류');
+    // 임시 디버그: 실제 에러 메시지 반환
+    res.status(500).json({ error: err.message, dbUser: process.env.DB_USER, dbServer: process.env.DB_SERVER, dbDatabase: process.env.DB_DATABASE, dbPort: process.env.DB_PORT });
   }
 });
 
