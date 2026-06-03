@@ -1,7 +1,7 @@
 const express = require('express');
 const sql = require('mssql');
 const cors = require('cors');
-require('dotenv').config(); // Load .env variables
+require('@dotenvx/dotenvx').config({ encrypt: false });
 
 const app = express();
 app.use(cors({ origin: '*', credentials: true }));
@@ -9,11 +9,11 @@ app.use(express.json());
 
 // Database configuration
 const dbConfig = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server:"bluewhale.database.windows.net",
-  database: process.env.DB_DATABASE,
-  port: parseInt(process.env.DB_PORT, 10),
+  user: "admin_bluewhale",
+  password: "dnlwjdwo554#@",
+  server: "bluewhale.database.windows.net",
+  database: '[kiosk(YS)]',
+  port: 1433,
   options: {
     encrypt: false,
     trustServerCertificate: true,
