@@ -10,15 +10,15 @@ app.use(express.json());
 
 // Database configuration
 const dbConfig = {
-  user: "admin_bluewhale",
-  password: "dnlwjdwo554#@",
-  server: "bluewhale.database.windows.net",
-  database: '[kiosk(YS)]',
-  port: 1433,
-  options: {
-    encrypt: false,
-    trustServerCertificate: true,
-  },
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    server: process.env.DB_SERVER,
+    database: process.env.DB_DATABASE,
+    port: parseInt(process.env.DB_PORT),
+    options: {
+        encrypt: false, // 이 부분을 false로 강제 설정하세요
+        trustServerCertificate: true // 로컬이나 테스트 환경일 경우 필수
+    }
 };
 
 // Health check
