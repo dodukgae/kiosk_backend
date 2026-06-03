@@ -17,8 +17,8 @@ const dbConfig = {
     database: process.env.DB_DATABASE,
     port: parseInt(process.env.DB_PORT),
     options: {
-        encrypt: false, // 이 부분을 false로 강제 설정하세요
-        trustServerCertificate: true // 로컬이나 테스트 환경일 경우 필수
+        encrypt: true, // Azure SQL은 암호화 연결 필수
+        trustServerCertificate: false // Azure 정식 서버에서는 false
     }
 };
 
